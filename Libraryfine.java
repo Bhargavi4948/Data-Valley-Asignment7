@@ -1,23 +1,20 @@
 import java.util.Scanner;
 
-public class EmployeeBonus {
+public class LibraryFine {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        System.out.print("Enter the current year: ");
-        int currentYear = scanner.nextInt();
+        System.out.print("Enter the number of days late: ");
+        int daysLate = scanner.nextInt();
         
-        System.out.print("Enter the year of joining: ");
-        int joiningYear = scanner.nextInt();
-        
-        int yearsOfService = currentYear - joiningYear;
-        
-        if (yearsOfService > 5) {
-            System.out.println("Bonus: Rs. 5000/-");
-        } else if (yearsOfService >= 3 && yearsOfService <= 5) {
-            System.out.println("Bonus: Rs. 3000/-");
+        if (daysLate <= 7) {
+            System.out.println("Fine: 50 paise");
+        } else if (daysLate <= 14) {
+            System.out.println("Fine: Rs. 1/-");
+        } else if (daysLate <= 21) {
+            System.out.println("Fine: Rs. 5/-");
         } else {
-            System.out.println("No bonus awarded.");
+            System.out.println("Membership canceled.");
         }
         
         scanner.close();
